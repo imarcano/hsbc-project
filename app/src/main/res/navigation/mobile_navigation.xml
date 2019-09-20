@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_basic_information">
+
+    <fragment
+        android:id="@+id/nav_basic_information"
+        android:name="com.inbergmarcano.mycvapp.ui.profile.HomeFragment"
+        android:label="@string/menu_basic_information"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.inbergmarcano.mycvapp.ui.basicinformation.BasicInformationFragment"
+        android:label="@string/menu_profile"
+        tools:layout="@layout/fragment_basic_information" />
+
+    <fragment
+        android:id="@+id/nav_experience"
+        android:name="com.inbergmarcano.mycvapp.ui.knowledge.ShareFragment"
+        android:label="@string/menu_experience"
+        tools:layout="@layout/fragment_knowledge" />
+
+    <fragment
+        android:id="@+id/nav_knowledge"
+        android:name="com.inbergmarcano.mycvapp.ui.experience.SendFragment"
+        android:label="@string/menu_knowledge"
+        tools:layout="@layout/fragment_experience" />
+</navigation>
