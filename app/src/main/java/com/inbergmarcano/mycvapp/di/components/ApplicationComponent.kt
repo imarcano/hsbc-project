@@ -1,9 +1,9 @@
-package com.inbergmarcano.mycvapp.di.component
+package com.inbergmarcano.mycvapp.di.components
 
 import android.app.Application
-import com.inbergmarcano.mycvapp.di.module.ApplicationModule
-import com.inbergmarcano.mycvapp.di.module.RestModule
-import com.inbergmarcano.mycvapp.di.scope.PerApplication
+import com.inbergmarcano.mycvapp.di.modules.ApplicationModule
+import com.inbergmarcano.mycvapp.di.modules.RestModule
+import com.inbergmarcano.mycvapp.di.scopes.PerApplication
 import com.inbergmarcano.mycvapp.rest.ResumeEndpoints
 import dagger.Component
 

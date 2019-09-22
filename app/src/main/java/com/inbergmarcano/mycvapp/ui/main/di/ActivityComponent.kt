@@ -1,8 +1,8 @@
 package com.inbergmarcano.mycvapp.ui.main.di
 
-import com.inbergmarcano.mycvapp.di.component.ApplicationComponent
-import com.inbergmarcano.mycvapp.ui.main.MainActivity
-import com.inbergmarcano.mycvapp.di.scope.PerActivity
+import com.inbergmarcano.mycvapp.di.components.ApplicationComponent
+import com.inbergmarcano.mycvapp.ui.main.view.MainActivity
+import com.inbergmarcano.mycvapp.di.scopes.PerActivity
 import dagger.Component
 
 @PerActivity

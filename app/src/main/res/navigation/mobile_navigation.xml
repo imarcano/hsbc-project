@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/nav_experience"
-        android:name="com.inbergmarcano.mycvapp.ui.experience.SendFragment"
+        android:name="com.inbergmarcano.mycvapp.ui.experience.view.ExperienceFragment"
         android:label="@string/menu_experience"
         tools:layout="@layout/fragment_knowledge" />
 

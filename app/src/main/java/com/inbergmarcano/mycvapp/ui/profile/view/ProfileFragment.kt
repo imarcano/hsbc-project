@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.inbergmarcano.mycvapp.R
-import com.inbergmarcano.mycvapp.di.component.ApplicationComponent
+import com.inbergmarcano.mycvapp.di.components.ApplicationComponent
 import com.inbergmarcano.mycvapp.ui.profile.di.ProfileFragmentModule
 import com.inbergmarcano.mycvapp.rest.ResumeEndpoints
 import com.inbergmarcano.mycvapp.ui.profile.di.DaggerProfileFragmentComponent

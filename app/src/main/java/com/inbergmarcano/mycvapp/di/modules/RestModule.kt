@@ -1,11 +1,8 @@
-package com.inbergmarcano.mycvapp.di.module
+package com.inbergmarcano.mycvapp.di.modules
 
-import android.app.Application
-import android.provider.SyncStateContract
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.inbergmarcano.mycvapp.base.BaseApp
-import com.inbergmarcano.mycvapp.di.scope.PerApplication
 import com.inbergmarcano.mycvapp.rest.ResumeEndpoints
 import com.inbergmarcano.mycvapp.utils.Constants
 import dagger.Module
@@ -16,7 +13,6 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Converter
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import javax.inject.Singleton
 
 @Module
 class RestModule(private var baseApp: BaseApp) {

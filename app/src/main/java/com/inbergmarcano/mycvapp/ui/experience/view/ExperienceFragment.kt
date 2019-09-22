@@ -1,4 +1,4 @@
-package com.inbergmarcano.mycvapp.ui.basicinformation.view
+package com.inbergmarcano.mycvapp.ui.experience.view
 
 import com.inbergmarcano.mycvapp.base.BaseFragment
 import android.os.Bundle
@@ -9,26 +9,26 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.inbergmarcano.mycvapp.R
 import com.inbergmarcano.mycvapp.di.components.ApplicationComponent
 import com.inbergmarcano.mycvapp.rest.ResumeEndpoints
-import com.inbergmarcano.mycvapp.ui.basicinformation.presenter.BasicInformationContract
-import com.inbergmarcano.mycvapp.ui.basicinformation.di.BasicInformationFragmentModule
-import com.inbergmarcano.mycvapp.ui.basicinformation.di.DaggerBasicInformationFragmentComponent
-import com.inbergmarcano.mycvapp.ui.basicinformation.model.BasicInformation
-import com.inbergmarcano.mycvapp.ui.basicinformation.model.BasicInformationDataManager
+import com.inbergmarcano.mycvapp.ui.experience.di.DaggerExperienceFragmentComponent
+import com.inbergmarcano.mycvapp.ui.experience.di.ExperienceFragmentModule
+import com.inbergmarcano.mycvapp.ui.experience.model.Experience
+import com.inbergmarcano.mycvapp.ui.experience.model.ExperienceDataManager
+import com.inbergmarcano.mycvapp.ui.experience.presenter.ExperienceContract
 import kotlinx.android.synthetic.main.fragment_basic_information.*
 import javax.inject.Inject
 
 
 
-class BasicInformationFragment: BaseFragment(),
-    BasicInformationContract.View {
+class ExperienceFragment: BaseFragment(),
+    ExperienceContract.View {
 
-    @Inject lateinit var mPresenter: BasicInformationContract.Presenter
+    @Inject lateinit var mPresenter: ExperienceContract.Presenter
     @Inject lateinit var mResumeEndpoints: ResumeEndpoints
 
 
     override fun injectDependencies(applicationComponent: ApplicationComponent) {
-        DaggerBasicInformationFragmentComponent.builder().applicationComponent(applicationComponent)
-            .basicInformationFragmentModule(BasicInformationFragmentModule())
+        DaggerExperienceFragmentComponent.builder().applicationComponent(applicationComponent)
+            .experienceFragmentModule(ExperienceFragmentModule())
             .build().inject(this)
     }
 
@@ -43,7 +43,7 @@ class BasicInformationFragment: BaseFragment(),
         view: View
     ) {
         showProgressBar()
-        mPresenter.subscribe(this, BasicInformationDataManager(mResumeEndpoints))
+        mPresenter.subscribe(this, ExperienceDataManager(mResumeEndpoints))
         mPresenter.loadData()
 
     }
@@ -59,11 +59,11 @@ class BasicInformationFragment: BaseFragment(),
         toast(error)
     }
 
-    override fun loadDataSuccess(basicInformations: ArrayList<BasicInformation>) {
+    override fun loadDataSuccess(experiences: ArrayList<Experience>) {
         dismissProgressBar()
-        val adapter = BasicInformationAdapter(
+        val adapter = ExperienceAdapter(
             context!!,
-            basicInformations
+            experiences
         )
         recyclerView!!.setLayoutManager(LinearLayoutManager(activity))
         recyclerView!!.setAdapter(adapter)

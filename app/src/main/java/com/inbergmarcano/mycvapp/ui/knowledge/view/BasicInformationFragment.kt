@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.inbergmarcano.mycvapp.R
-import com.inbergmarcano.mycvapp.di.component.ApplicationComponent
+import com.inbergmarcano.mycvapp.di.components.ApplicationComponent
 import com.inbergmarcano.mycvapp.rest.ResumeEndpoints
 import com.inbergmarcano.mycvapp.ui.knowledge.di.DaggerKnowledgeFragmentComponent
 import com.inbergmarcano.mycvapp.ui.knowledge.di.KnowledgeFragmentModule

@@ -12,4 +12,13 @@
     <string name="menu_experience">Experience</string>
     <string name="menu_knowledge">Knowledge</string>
     <string name="menu_share">Share</string>
+
+
+
+    <string name="item_experience_company">Company:</string>
+    <string name="item_experience_project_or_customer">Project:</string>
+    <string name="item_experience_role">Role:</string>
+    <string name="item_experience_period">Period:</string>
+    <string name="item_experience_completed_tasks">Completed Tasks</string>
+    <string name="item_experience_used_tools">Used Tools</string>
 </resources>

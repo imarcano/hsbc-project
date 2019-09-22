@@ -1,4 +1,4 @@
-package com.inbergmarcano.mycvapp.ui.main
+package com.inbergmarcano.mycvapp.ui.main.view
 
 import android.os.Bundle
 import androidx.navigation.findNavController
@@ -15,9 +15,10 @@ import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.inbergmarcano.mycvapp.R
 import com.inbergmarcano.mycvapp.base.BaseActivity
-import com.inbergmarcano.mycvapp.di.component.ApplicationComponent
+import com.inbergmarcano.mycvapp.di.components.ApplicationComponent
 import com.inbergmarcano.mycvapp.ui.main.di.ActivityModule
 import com.inbergmarcano.mycvapp.rest.ResumeEndpoints
+import com.inbergmarcano.mycvapp.ui.main.presenter.MainContract
 import com.inbergmarcano.mycvapp.ui.main.di.DaggerActivityComponent
 import com.inbergmarcano.mycvapp.ui.main.model.HeaderDataManager
 import javax.inject.Inject

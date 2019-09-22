@@ -2,13 +2,10 @@ package com.inbergmarcano.mycvapp.base
 
 
 import android.app.Application
-import android.provider.SyncStateContract
-import com.inbergmarcano.mycvapp.BuildConfig
-import com.inbergmarcano.mycvapp.di.component.ApplicationComponent
-import com.inbergmarcano.mycvapp.di.component.DaggerApplicationComponent
-import com.inbergmarcano.mycvapp.di.module.ApplicationModule
-import com.inbergmarcano.mycvapp.di.module.RestModule
-import com.inbergmarcano.mycvapp.utils.Constants
+import com.inbergmarcano.mycvapp.di.components.ApplicationComponent
+import com.inbergmarcano.mycvapp.di.components.DaggerApplicationComponent
+import com.inbergmarcano.mycvapp.di.modules.ApplicationModule
+import com.inbergmarcano.mycvapp.di.modules.RestModule
 
 class BaseApp: Application() {
 

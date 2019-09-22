@@ -1,4 +1,4 @@
-package com.inbergmarcano.mycvapp.di.scope
+package com.inbergmarcano.mycvapp.di.scopes
 
 import javax.inject.Scope
 

@@ -1,8 +1,8 @@
 package com.inbergmarcano.mycvapp.ui.main.di
 
 import android.app.Activity
-import com.inbergmarcano.mycvapp.ui.main.MainContract
-import com.inbergmarcano.mycvapp.ui.main.MainPresenter
+import com.inbergmarcano.mycvapp.ui.main.presenter.MainContract
+import com.inbergmarcano.mycvapp.ui.main.presenter.MainPresenter
 import dagger.Module
 import dagger.Provides
 

@@ -1,4 +1,4 @@
-package com.inbergmarcano.mycvapp.ui.main
+package com.inbergmarcano.mycvapp.ui.main.presenter
 
 import com.inbergmarcano.mycvapp.base.BaseContract
 import com.inbergmarcano.mycvapp.rest.events.GetHeaderFailureEvent

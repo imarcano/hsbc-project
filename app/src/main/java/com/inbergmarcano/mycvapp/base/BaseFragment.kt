@@ -6,9 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.inbergmarcano.mycvapp.di.component.ApplicationComponent
-import com.inbergmarcano.mycvapp.di.component.DaggerApplicationComponent
-
+import com.inbergmarcano.mycvapp.di.components.ApplicationComponent
 
 
 abstract class BaseFragment: Fragment() {

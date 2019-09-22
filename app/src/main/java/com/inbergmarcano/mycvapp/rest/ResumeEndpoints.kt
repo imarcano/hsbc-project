@@ -1,7 +1,9 @@
 package com.inbergmarcano.mycvapp.rest
 
 import com.inbergmarcano.mycvapp.rest.models.BasicInformations
+import com.inbergmarcano.mycvapp.rest.models.ExperienceList
 import com.inbergmarcano.mycvapp.rest.models.KnowledgeList
+import com.inbergmarcano.mycvapp.ui.experience.model.Experience
 import com.inbergmarcano.mycvapp.ui.main.model.Header
 import com.inbergmarcano.mycvapp.ui.profile.model.Profile
 import retrofit2.Call
@@ -19,4 +21,7 @@ interface ResumeEndpoints {
 
     @GET("snippets/imarcano/qng5rB/files/knowledge.json")
     fun getKnowledge(): Call<KnowledgeList>
+
+    @GET("snippets/imarcano/qng5KA/files/experience.json")
+    fun getExperience(): Call<ExperienceList>
 }

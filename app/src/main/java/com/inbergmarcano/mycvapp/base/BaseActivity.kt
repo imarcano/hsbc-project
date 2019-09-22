@@ -2,19 +2,11 @@ package com.inbergmarcano.mycvapp.base
 
 import android.os.Bundle
 import android.view.View
-import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
-import com.inbergmarcano.mycvapp.R
-import com.inbergmarcano.mycvapp.di.component.ApplicationComponent
-import com.inbergmarcano.mycvapp.di.component.DaggerApplicationComponent
+import com.inbergmarcano.mycvapp.di.components.ApplicationComponent
 import kotlinx.android.synthetic.main.content_main.*
-import kotlinx.android.synthetic.main.fragment_basic_information.*
-import kotlin.reflect.KClass
-
 
 
 abstract class BaseActivity: AppCompatActivity() {
