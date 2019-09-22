@@ -1,4 +1,4 @@
-package com.inbergmarcano.mycvapp.ui.basicinformation
+package com.inbergmarcano.mycvapp.ui.profile
 
 import com.inbergmarcano.mycvapp.base.BaseFragment
 import android.os.Bundle
@@ -8,33 +8,32 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.inbergmarcano.mycvapp.R
 import com.inbergmarcano.mycvapp.di.component.ApplicationComponent
+import com.inbergmarcano.mycvapp.ui.profile.di.ProfileFragmentModule
 import com.inbergmarcano.mycvapp.rest.ResumeEndpoints
-import com.inbergmarcano.mycvapp.ui.basicinformation.di.BasicInformationFragmentModule
-import com.inbergmarcano.mycvapp.ui.basicinformation.di.DaggerBasicInformationFragmentComponent
-import com.inbergmarcano.mycvapp.ui.basicinformation.model.BasicInformation
-import com.inbergmarcano.mycvapp.ui.basicinformation.model.BasicInformationDataManager
-import com.inbergmarcano.mycvapp.ui.profile.ProfileContract
+import com.inbergmarcano.mycvapp.ui.basicinformation.BasicInformationAdapter
+import com.inbergmarcano.mycvapp.ui.profile.di.DaggerProfileFragmentComponent
 import com.inbergmarcano.mycvapp.ui.profile.model.Profile
 import com.inbergmarcano.mycvapp.ui.profile.model.ProfileDataManager
 import kotlinx.android.synthetic.main.fragment_basic_information.*
+import kotlinx.android.synthetic.main.fragment_profile.*
 import javax.inject.Inject
 
 
 
-class BasicInformationFragment: BaseFragment(), BasicInformationContract.View {
+class ProfileFragment: BaseFragment(), ProfileContract.View {
 
-    @Inject lateinit var mPresenter: BasicInformationContract.Presenter
+    @Inject lateinit var mPresenter: ProfileContract.Presenter
     @Inject lateinit var mResumeEndpoints: ResumeEndpoints
 
 
     override fun injectDependencies(applicationComponent: ApplicationComponent) {
-        DaggerBasicInformationFragmentComponent.builder().applicationComponent(applicationComponent)
-            .basicInformationFragmentModule(BasicInformationFragmentModule())
+        DaggerProfileFragmentComponent.builder().applicationComponent(applicationComponent)
+            .profileFragmentModule(ProfileFragmentModule())
             .build().inject(this)
     }
 
     override fun getLayoutView(): Int {
-        return R.layout.fragment_basic_information
+        return R.layout.fragment_profile
     }
 
     override fun onViewReady(
@@ -44,7 +43,7 @@ class BasicInformationFragment: BaseFragment(), BasicInformationContract.View {
         view: View
     ) {
         showProgressBar()
-        mPresenter.subscribe(this, BasicInformationDataManager(mResumeEndpoints))
+        mPresenter.subscribe(this, ProfileDataManager(mResumeEndpoints))
         mPresenter.loadData()
 
     }
@@ -60,11 +59,9 @@ class BasicInformationFragment: BaseFragment(), BasicInformationContract.View {
         toast(error)
     }
 
-    override fun loadDataSuccess(basicInformations: ArrayList<BasicInformation>) {
+    override fun loadDataSuccess(profile: Profile) {
         dismissProgressBar()
-        val adapter = BasicInformationAdapter(context!!,basicInformations)
-        recyclerView!!.setLayoutManager(LinearLayoutManager(activity))
-        recyclerView!!.setAdapter(adapter)
+        profile_text.text = profile.content
     }
 
 }

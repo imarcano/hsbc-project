@@ -13,7 +13,6 @@ import javax.inject.Singleton
 class ApplicationModule(private val baseApp: BaseApp) {
 
     @Provides
-    @Singleton
     fun provideApplication(): BaseApp {
         return baseApp
     }

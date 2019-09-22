@@ -2,9 +2,9 @@ package com.inbergmarcano.mycvapp.ui.basicinformation.model
 
 import androidx.annotation.NonNull
 import com.inbergmarcano.mycvapp.rest.ResumeEndpoints
-import com.inbergmarcano.mycvapp.rest.events.GetResumeFailureEvent
-import com.inbergmarcano.mycvapp.rest.events.GetResumeSuccessEvent
-import com.inbergmarcano.mycvapp.rest.models.Resume
+import com.inbergmarcano.mycvapp.rest.events.GetBasicInformationsFailureEvent
+import com.inbergmarcano.mycvapp.rest.events.GetBasicInformationsSuccessEvent
+import com.inbergmarcano.mycvapp.rest.models.BasicInformations
 import org.greenrobot.eventbus.EventBus
 import retrofit2.Call
 import retrofit2.Callback
@@ -14,17 +14,17 @@ import javax.inject.Singleton
 class BasicInformationDataManager (private val resumeEndpoints: ResumeEndpoints) {
 
         fun getResumeBasicInformation() {
-            val callback = object : Callback<Resume> {
-                override fun onResponse(@NonNull call: Call<Resume>, @NonNull response: retrofit2.Response<Resume>) {
+            val callback = object : Callback<BasicInformations> {
+                override fun onResponse(@NonNull call: Call<BasicInformations>, @NonNull response: retrofit2.Response<BasicInformations>) {
                     if (response.isSuccessful) {
-                        EventBus.getDefault().post(GetResumeSuccessEvent(response.body()!!.basicInformations))
+                        EventBus.getDefault().post(GetBasicInformationsSuccessEvent(response.body()!!.basicInformations))
                     } else {
-                        EventBus.getDefault().post(GetResumeFailureEvent(response.message()))
+                        EventBus.getDefault().post(GetBasicInformationsFailureEvent(response.message()))
                     }
                 }
 
-                override fun onFailure(@NonNull call: Call<Resume>, @NonNull t: Throwable) {
-                    EventBus.getDefault().post(GetResumeFailureEvent(t.localizedMessage))
+                override fun onFailure(@NonNull call: Call<BasicInformations>, @NonNull t: Throwable) {
+                    EventBus.getDefault().post(GetBasicInformationsFailureEvent(t.localizedMessage))
                 }
             }
             resumeEndpoints.getBasicInformation().enqueue(callback)

@@ -4,11 +4,12 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.inbergmarcano.mycvapp.R
 import com.inbergmarcano.mycvapp.ui.basicinformation.model.BasicInformation
+import com.inbergmarcano.mycvapp.ui.profile.model.Profile
 
 
 class BasicInformationAdapter(
@@ -17,8 +18,8 @@ class BasicInformationAdapter(
 ): RecyclerView.Adapter<BasicInformationAdapter.ListViewHolder>() {
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         val basicInformation = list[position]
-        holder.title!!.setText(basicInformation.title)
-        holder.body!!.setText(basicInformation.description)
+        holder.title!!.text = basicInformation.title
+        holder.body!!.text = basicInformation.description
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
@@ -32,7 +33,7 @@ class BasicInformationAdapter(
     }
 
     class ListViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
-        var layout: ConstraintLayout = itemView.findViewById(R.id.item_layout)
+        var layout: LinearLayout = itemView.findViewById(R.id.item_layout)
         val title: TextView = itemView.findViewById(R.id.item_title)
         val body: TextView = itemView.findViewById(R.id.item_body)
     }

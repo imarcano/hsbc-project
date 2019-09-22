@@ -1,15 +1,14 @@
-package com.inbergmarcano.mycvapp.di.module
+package com.inbergmarcano.mycvapp.ui.basicinformation.di
 
-import com.inbergmarcano.mycvapp.di.scope.PerApplication
 import com.inbergmarcano.mycvapp.ui.basicinformation.BasicInformationContract
 import com.inbergmarcano.mycvapp.ui.basicinformation.BasicInformationPresenter
-import com.inbergmarcano.mycvapp.ui.basicinformation.model.BasicInformation
+import com.inbergmarcano.mycvapp.ui.profile.ProfileContract
+import com.inbergmarcano.mycvapp.ui.profile.ProfilePresenter
 import dagger.Module
 import dagger.Provides
-import javax.inject.Singleton
 
 @Module
-class FragmentModule {
+class BasicInformationFragmentModule {
 
     @Provides
     fun providePresenter(): BasicInformationContract.Presenter {

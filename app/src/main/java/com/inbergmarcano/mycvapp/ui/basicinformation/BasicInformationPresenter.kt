@@ -1,8 +1,10 @@
 package com.inbergmarcano.mycvapp.ui.basicinformation
 
-import com.inbergmarcano.mycvapp.rest.events.GetResumeFailureEvent
-import com.inbergmarcano.mycvapp.rest.events.GetResumeSuccessEvent
+import com.inbergmarcano.mycvapp.rest.events.GetBasicInformationsFailureEvent
+import com.inbergmarcano.mycvapp.rest.events.GetBasicInformationsSuccessEvent
 import com.inbergmarcano.mycvapp.ui.basicinformation.model.BasicInformationDataManager
+import com.inbergmarcano.mycvapp.ui.profile.ProfileContract
+import com.inbergmarcano.mycvapp.ui.profile.model.ProfileDataManager
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import javax.inject.Inject
@@ -29,13 +31,13 @@ class BasicInformationPresenter: BasicInformationContract.Presenter{
 
 
     @Subscribe
-    override fun onGetResumeBasicInformationSuccess(getResumeSuccessEvent: GetResumeSuccessEvent) {
-        mView.loadDataSuccess(getResumeSuccessEvent.basicInformations)
+    override fun onGetResumeBasicInformationSuccess(getBasicInformationsSuccessEvent: GetBasicInformationsSuccessEvent) {
+        mView.loadDataSuccess(getBasicInformationsSuccessEvent.basicInformations)
 
     }
 
     @Subscribe
-    override fun onGetResumeBasicInformationFailure(getResumeFailureEvent: GetResumeFailureEvent) {
-        mView.showErrorMessage(getResumeFailureEvent.message)
+    override fun onGetResumeBasicInformationFailure(getBasicInformationsFailureEvent: GetBasicInformationsFailureEvent) {
+        mView.showErrorMessage(getBasicInformationsFailureEvent.message)
     }
 }

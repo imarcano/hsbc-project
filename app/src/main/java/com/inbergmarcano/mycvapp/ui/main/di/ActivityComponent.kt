@@ -1,11 +1,9 @@
-package com.inbergmarcano.mycvapp.di.component
+package com.inbergmarcano.mycvapp.ui.main.di
 
-import com.inbergmarcano.mycvapp.MainActivity
-import com.inbergmarcano.mycvapp.di.module.ActivityModule
+import com.inbergmarcano.mycvapp.di.component.ApplicationComponent
+import com.inbergmarcano.mycvapp.ui.main.MainActivity
 import com.inbergmarcano.mycvapp.di.scope.PerActivity
-import com.inbergmarcano.mycvapp.di.scope.PerApplication
 import dagger.Component
-import javax.inject.Singleton
 
 @PerActivity
 @Component(dependencies = [ApplicationComponent::class], modules = [ActivityModule::class])

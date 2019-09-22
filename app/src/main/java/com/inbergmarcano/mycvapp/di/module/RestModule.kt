@@ -22,38 +22,32 @@ import javax.inject.Singleton
 class RestModule(private var baseApp: BaseApp) {
 
     @Provides
-    @Singleton
     fun providesBaseUrl(): String{
         return Constants.BASE_URL
     }
 
     @Provides
-    @Singleton
     fun providesGson(): Gson{
         return GsonBuilder().create()
     }
 
     @Provides
-    @Singleton
     fun provideGsonConverter(): Converter.Factory {
         return GsonConverterFactory.create()
     }
 
     @Provides
-    @Singleton
     fun provideHttpCache(application: BaseApp): Cache {
         val cacheSize = 10 * 1024 * 1024
         return Cache(application.cacheDir, cacheSize.toLong())
     }
 
     @Provides
-    @Singleton
     fun providesLoggingInterceptor(): HttpLoggingInterceptor {
         return HttpLoggingInterceptor()
     }
 
     @Provides
-    @Singleton
     fun providesOkHttpClient(
         loggingInterceptor: HttpLoggingInterceptor,
         cache: Cache
@@ -64,7 +58,6 @@ class RestModule(private var baseApp: BaseApp) {
     }
 
     @Provides
-    @Singleton
     fun provideRetrofit(
         baseUrl: String,
         converter: Converter.Factory,
@@ -78,7 +71,6 @@ class RestModule(private var baseApp: BaseApp) {
     }
 
     @Provides
-    @Singleton
     fun provideResumeEndpoints(retrofit: Retrofit): ResumeEndpoints {
         return retrofit.create<ResumeEndpoints>(ResumeEndpoints::class.java)
     }

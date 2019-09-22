@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment
 import com.inbergmarcano.mycvapp.di.component.ApplicationComponent
 import com.inbergmarcano.mycvapp.di.component.DaggerApplicationComponent
 
+
+
 abstract class BaseFragment: Fragment() {
 
     private lateinit var mBaseActivity: BaseActivity
@@ -43,11 +45,12 @@ abstract class BaseFragment: Fragment() {
     }
 
     protected fun dismissProgressBar(){
-        mBaseActivity.dismissProgressBar()
+         mBaseActivity.dismissProgressBar()
+
     }
 
-    protected fun pushFragment(fragment: Fragment, vararg animations: Int){
-        mBaseActivity.pushFragment(fragment, *animations)
+    protected fun toast(msg: String){
+        mBaseActivity.toast(msg)
     }
 
 
