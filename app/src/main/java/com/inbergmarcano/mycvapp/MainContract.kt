@@ -1,15 +1,16 @@
 package com.inbergmarcano.mycvapp
 
-import com.inbergmarcano.mycvapp.base.BaseContract
+import com.inbergmarcano.mycvapp.base.BaseActivityContract
+import com.inbergmarcano.mycvapp.base.BaseFragmentContract
 
 class MainContract {
 
-    interface View: BaseContract.View {
+    interface View: BaseActivityContract.View {
         fun showAboutFragment()
         fun showListFragment()
     }
 
-    interface Presenter: BaseContract.Presenter<View> {
+    interface Presenter: BaseActivityContract.Presenter<View> {
         fun onDrawerOptionAboutClick()
     }
 }

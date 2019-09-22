@@ -25,9 +25,9 @@ allprojects {
 
 ext {
     retrofit_version = '2.3.0'
-    rxjava2_version = '2.1.8'
     rxandroid_version = '2.0.1'
     dagger2_version = '2.15'
+    support_version = '28.1.0'
 }
 
 task clean(type: Delete) {
