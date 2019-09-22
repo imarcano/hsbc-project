@@ -1,9 +1,7 @@
 package com.inbergmarcano.mycvapp.ui.basicinformation.di
 
-import com.inbergmarcano.mycvapp.ui.basicinformation.BasicInformationContract
-import com.inbergmarcano.mycvapp.ui.basicinformation.BasicInformationPresenter
-import com.inbergmarcano.mycvapp.ui.profile.ProfileContract
-import com.inbergmarcano.mycvapp.ui.profile.ProfilePresenter
+import com.inbergmarcano.mycvapp.ui.basicinformation.presenter.BasicInformationContract
+import com.inbergmarcano.mycvapp.ui.basicinformation.presenter.BasicInformationPresenter
 import dagger.Module
 import dagger.Provides
 

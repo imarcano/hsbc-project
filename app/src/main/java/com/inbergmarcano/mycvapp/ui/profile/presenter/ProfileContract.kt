@@ -1,8 +1,6 @@
-package com.inbergmarcano.mycvapp.ui.profile
+package com.inbergmarcano.mycvapp.ui.profile.presenter
 
 import com.inbergmarcano.mycvapp.base.BaseContract
-import com.inbergmarcano.mycvapp.rest.events.GetBasicInformationsFailureEvent
-import com.inbergmarcano.mycvapp.rest.events.GetBasicInformationsSuccessEvent
 import com.inbergmarcano.mycvapp.rest.events.GetProfileFailureEvent
 import com.inbergmarcano.mycvapp.rest.events.GetProfileSuccessEvent
 import com.inbergmarcano.mycvapp.ui.profile.model.Profile

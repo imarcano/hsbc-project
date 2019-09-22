@@ -1,12 +1,10 @@
-package com.inbergmarcano.mycvapp.ui.basicinformation
+package com.inbergmarcano.mycvapp.ui.basicinformation.presenter
 
 import com.inbergmarcano.mycvapp.base.BaseContract
 import com.inbergmarcano.mycvapp.rest.events.GetBasicInformationsFailureEvent
 import com.inbergmarcano.mycvapp.rest.events.GetBasicInformationsSuccessEvent
 import com.inbergmarcano.mycvapp.ui.basicinformation.model.BasicInformation
 import com.inbergmarcano.mycvapp.ui.basicinformation.model.BasicInformationDataManager
-import com.inbergmarcano.mycvapp.ui.profile.model.Profile
-import com.inbergmarcano.mycvapp.ui.profile.model.ProfileDataManager
 
 
 class BasicInformationContract {

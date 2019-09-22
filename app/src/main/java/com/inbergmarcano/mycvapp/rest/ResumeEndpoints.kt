@@ -1,6 +1,7 @@
 package com.inbergmarcano.mycvapp.rest
 
 import com.inbergmarcano.mycvapp.rest.models.BasicInformations
+import com.inbergmarcano.mycvapp.rest.models.KnowledgeList
 import com.inbergmarcano.mycvapp.ui.main.model.Header
 import com.inbergmarcano.mycvapp.ui.profile.model.Profile
 import retrofit2.Call
@@ -15,4 +16,7 @@ interface ResumeEndpoints {
 
     @GET("snippets/imarcano/7ng5En/files/profile.json")
     fun getProfile(): Call<Profile>
+
+    @GET("snippets/imarcano/qng5rB/files/knowledge.json")
+    fun getKnowledge(): Call<KnowledgeList>
 }

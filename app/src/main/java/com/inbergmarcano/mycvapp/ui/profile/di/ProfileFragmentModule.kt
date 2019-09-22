@@ -1,7 +1,7 @@
 package com.inbergmarcano.mycvapp.ui.profile.di
 
-import com.inbergmarcano.mycvapp.ui.profile.ProfileContract
-import com.inbergmarcano.mycvapp.ui.profile.ProfilePresenter
+import com.inbergmarcano.mycvapp.ui.profile.presenter.ProfileContract
+import com.inbergmarcano.mycvapp.ui.profile.presenter.ProfilePresenter
 import dagger.Module
 import dagger.Provides
 

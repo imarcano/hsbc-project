@@ -1,4 +1,4 @@
-package com.inbergmarcano.mycvapp.ui.basicinformation
+package com.inbergmarcano.mycvapp.ui.basicinformation.view
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -9,7 +9,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.inbergmarcano.mycvapp.R
 import com.inbergmarcano.mycvapp.ui.basicinformation.model.BasicInformation
-import com.inbergmarcano.mycvapp.ui.profile.model.Profile
 
 
 class BasicInformationAdapter(
@@ -24,7 +23,9 @@ class BasicInformationAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
         val itemView = LayoutInflater.from(context).inflate(R.layout.item_basic_information, parent, false)
-        return ListViewHolder(itemView)
+        return ListViewHolder(
+            itemView
+        )
     }
 
 

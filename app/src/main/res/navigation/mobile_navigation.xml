@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/nav_basic_information"
-        android:name="com.inbergmarcano.mycvapp.ui.basicinformation.BasicInformationFragment"
+        android:name="com.inbergmarcano.mycvapp.ui.basicinformation.view.BasicInformationFragment"
         android:label="@string/menu_basic_information"
         tools:layout="@layout/fragment_profile" />
 
     <fragment
         android:id="@+id/nav_profile"
-        android:name="com.inbergmarcano.mycvapp.ui.profile.ProfileFragment"
+        android:name="com.inbergmarcano.mycvapp.ui.profile.view.ProfileFragment"
         android:label="@string/menu_profile"
         tools:layout="@layout/fragment_basic_information" />
 
@@ -25,7 +25,7 @@
 
     <fragment
         android:id="@+id/nav_knowledge"
-        android:name="com.inbergmarcano.mycvapp.ui.knowledge.ShareFragment"
+        android:name="com.inbergmarcano.mycvapp.ui.knowledge.view.KnowledgeFragment"
         android:label="@string/menu_knowledge"
         tools:layout="@layout/fragment_experience" />
 </navigation>

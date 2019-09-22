@@ -1,20 +1,18 @@
-package com.inbergmarcano.mycvapp.ui.profile
+package com.inbergmarcano.mycvapp.ui.profile.view
 
 import com.inbergmarcano.mycvapp.base.BaseFragment
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.inbergmarcano.mycvapp.R
 import com.inbergmarcano.mycvapp.di.component.ApplicationComponent
 import com.inbergmarcano.mycvapp.ui.profile.di.ProfileFragmentModule
 import com.inbergmarcano.mycvapp.rest.ResumeEndpoints
-import com.inbergmarcano.mycvapp.ui.basicinformation.BasicInformationAdapter
 import com.inbergmarcano.mycvapp.ui.profile.di.DaggerProfileFragmentComponent
 import com.inbergmarcano.mycvapp.ui.profile.model.Profile
 import com.inbergmarcano.mycvapp.ui.profile.model.ProfileDataManager
-import kotlinx.android.synthetic.main.fragment_basic_information.*
+import com.inbergmarcano.mycvapp.ui.profile.presenter.ProfileContract
 import kotlinx.android.synthetic.main.fragment_profile.*
 import javax.inject.Inject
 

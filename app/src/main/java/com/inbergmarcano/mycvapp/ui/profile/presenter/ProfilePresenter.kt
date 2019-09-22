@@ -1,7 +1,5 @@
-package com.inbergmarcano.mycvapp.ui.profile
+package com.inbergmarcano.mycvapp.ui.profile.presenter
 
-import com.inbergmarcano.mycvapp.rest.events.GetBasicInformationsFailureEvent
-import com.inbergmarcano.mycvapp.rest.events.GetBasicInformationsSuccessEvent
 import com.inbergmarcano.mycvapp.rest.events.GetProfileFailureEvent
 import com.inbergmarcano.mycvapp.rest.events.GetProfileSuccessEvent
 import com.inbergmarcano.mycvapp.ui.profile.model.ProfileDataManager
@@ -9,7 +7,7 @@ import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import javax.inject.Inject
 
-class ProfilePresenter: ProfileContract.Presenter{
+class ProfilePresenter: ProfileContract.Presenter {
 
     private lateinit var mView: ProfileContract.View
     private lateinit var mDataManager: ProfileDataManager
