@@ -12,10 +12,10 @@ class KnowledgePresenter:
     KnowledgeContract.Presenter {
 
     private lateinit var mView: KnowledgeContract.View
-    private lateinit var mDataManager: KnowledgeDataManager
+    private lateinit var mDataManager: KnowledgeContract.DataManager
 
 
-    @Inject override fun subscribe(view: KnowledgeContract.View, dataManager: KnowledgeDataManager) {
+    @Inject override fun subscribe(view: KnowledgeContract.View, dataManager: KnowledgeContract.DataManager) {
         EventBus.getDefault().register(this)
         mView = view
         mDataManager = dataManager

@@ -17,8 +17,8 @@ class BasicInformationAdapter(
 ): RecyclerView.Adapter<BasicInformationAdapter.ListViewHolder>() {
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         val basicInformation = list[position]
-        holder.title!!.text = basicInformation.title
-        holder.body!!.text = basicInformation.description
+        holder.title.text = basicInformation.title
+        holder.body.text = basicInformation.description
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {

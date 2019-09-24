@@ -1,12 +1,7 @@
 package com.inbergmarcano.mycvapp.ui.experience.presenter
 
-import com.inbergmarcano.mycvapp.rest.events.GetBasicInformationsFailureEvent
-import com.inbergmarcano.mycvapp.rest.events.GetBasicInformationsSuccessEvent
 import com.inbergmarcano.mycvapp.rest.events.GetExperienceFailureEvent
 import com.inbergmarcano.mycvapp.rest.events.GetExperienceSuccessEvent
-import com.inbergmarcano.mycvapp.ui.basicinformation.model.BasicInformationDataManager
-import com.inbergmarcano.mycvapp.ui.experience.model.ExperienceDataManager
-import com.inbergmarcano.mycvapp.ui.experience.presenter.ExperienceContract
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import javax.inject.Inject
@@ -15,10 +10,10 @@ class ExperiencePresenter:
     ExperienceContract.Presenter {
 
     private lateinit var mView: ExperienceContract.View
-    private lateinit var mDataManager: ExperienceDataManager
+    private lateinit var mDataManager: ExperienceContract.DataManager
 
 
-    @Inject override fun subscribe(view: ExperienceContract.View, dataManager: ExperienceDataManager) {
+    @Inject override fun subscribe(view: ExperienceContract.View, dataManager: ExperienceContract.DataManager) {
         EventBus.getDefault().register(this)
         mView = view
         mDataManager = dataManager

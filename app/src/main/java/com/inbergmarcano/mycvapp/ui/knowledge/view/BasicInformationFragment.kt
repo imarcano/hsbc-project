@@ -65,8 +65,8 @@ class KnowledgeFragment: BaseFragment(),
             context!!,
             knowledge
         )
-        recyclerView!!.setLayoutManager(LinearLayoutManager(activity))
-        recyclerView!!.setAdapter(adapter)
+        recyclerView!!.layoutManager = LinearLayoutManager(activity)
+        recyclerView!!.adapter = adapter
     }
 
 }

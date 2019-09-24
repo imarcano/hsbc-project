@@ -17,12 +17,12 @@ class ExperienceAdapter(
 ): RecyclerView.Adapter<ExperienceAdapter.ListViewHolder>() {
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         val experience = list[position]
-        holder.company!!.text = experience.company
-        holder.projectOrCustomer!!.text = experience.projectOrCustomer
-        holder.role!!.text = experience.role
-        holder.period!!.text = experience.period
-        holder.completedTasks!!.text = experience.completedTasks
-        holder.usedTools!!.text = experience.usedTools
+        holder.company.text = experience.company
+        holder.projectOrCustomer.text = experience.projectOrCustomer
+        holder.role.text = experience.role
+        holder.period.text = experience.period
+        holder.completedTasks.text = experience.completedTasks
+        holder.usedTools.text = experience.usedTools
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {

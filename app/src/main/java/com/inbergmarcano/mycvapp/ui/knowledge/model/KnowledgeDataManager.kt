@@ -2,21 +2,19 @@ package com.inbergmarcano.mycvapp.ui.knowledge.model
 
 import androidx.annotation.NonNull
 import com.inbergmarcano.mycvapp.rest.ResumeEndpoints
-import com.inbergmarcano.mycvapp.rest.events.GetBasicInformationsFailureEvent
-import com.inbergmarcano.mycvapp.rest.events.GetBasicInformationsSuccessEvent
 import com.inbergmarcano.mycvapp.rest.events.GetKnowledgeFailureEvent
 import com.inbergmarcano.mycvapp.rest.events.GetKnowledgeSuccessEvent
-import com.inbergmarcano.mycvapp.rest.models.BasicInformations
 import com.inbergmarcano.mycvapp.rest.models.KnowledgeList
+import com.inbergmarcano.mycvapp.ui.knowledge.presenter.KnowledgeContract
 import org.greenrobot.eventbus.EventBus
 import retrofit2.Call
 import retrofit2.Callback
 import javax.inject.Singleton
 
 @Singleton
-class KnowledgeDataManager (private val resumeEndpoints: ResumeEndpoints) {
+class KnowledgeDataManager (private val resumeEndpoints: ResumeEndpoints): KnowledgeContract.DataManager {
 
-        fun getResumeKnowledge() {
+        override fun getResumeKnowledge() {
             val callback = object : Callback<KnowledgeList> {
                 override fun onResponse(@NonNull call: Call<KnowledgeList>, @NonNull response: retrofit2.Response<KnowledgeList>) {
                     if (response.isSuccessful) {

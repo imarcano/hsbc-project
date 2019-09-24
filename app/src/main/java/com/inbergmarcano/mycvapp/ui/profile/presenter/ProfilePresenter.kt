@@ -10,10 +10,10 @@ import javax.inject.Inject
 class ProfilePresenter: ProfileContract.Presenter {
 
     private lateinit var mView: ProfileContract.View
-    private lateinit var mDataManager: ProfileDataManager
+    private lateinit var mDataManager: ProfileContract.DataManager
 
 
-    @Inject override fun subscribe(view: ProfileContract.View, dataManager: ProfileDataManager) {
+    @Inject override fun subscribe(view: ProfileContract.View, dataManager: ProfileContract.DataManager) {
         EventBus.getDefault().register(this)
         mView = view
         mDataManager = dataManager

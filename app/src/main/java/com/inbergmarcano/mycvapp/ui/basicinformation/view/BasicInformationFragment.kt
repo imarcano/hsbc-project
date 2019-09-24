@@ -65,8 +65,8 @@ class BasicInformationFragment: BaseFragment(),
             context!!,
             basicInformations
         )
-        recyclerView!!.setLayoutManager(LinearLayoutManager(activity))
-        recyclerView!!.setAdapter(adapter)
+        recyclerView!!.layoutManager = LinearLayoutManager(activity)
+        recyclerView!!.adapter = adapter
     }
 
 }

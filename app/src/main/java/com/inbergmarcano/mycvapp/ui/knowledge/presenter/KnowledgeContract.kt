@@ -14,9 +14,13 @@ class KnowledgeContract {
         fun loadDataSuccess(knowledge: ArrayList<Knowledge>)
     }
 
-    interface Presenter: BaseContract.Presenter<View, KnowledgeDataManager> {
+    interface Presenter: BaseContract.Presenter<View, DataManager> {
         fun loadData()
         fun onGetResumeBasicInformationSuccess(getKnowledgeSuccessEvent: GetKnowledgeSuccessEvent)
         fun onGetResumeBasicInformationFailure(getKnowledgeFailureEvent: GetKnowledgeFailureEvent)
+    }
+
+    interface DataManager{
+        fun getResumeKnowledge()
     }
 }

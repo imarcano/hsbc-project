@@ -1,5 +1,6 @@
 package com.inbergmarcano.mycvapp.ui.main.presenter
 
+import android.provider.ContactsContract
 import com.inbergmarcano.mycvapp.base.BaseContract
 import com.inbergmarcano.mycvapp.rest.events.GetHeaderFailureEvent
 import com.inbergmarcano.mycvapp.rest.events.GetHeaderSuccessEvent
@@ -14,9 +15,13 @@ class MainContract {
         fun showErrorMessage(msg: String)
     }
 
-    interface Presenter: BaseContract.Presenter<View, HeaderDataManager>{
+    interface Presenter: BaseContract.Presenter<View, DataManager>{
         fun loadData()
-        fun onGetResumeBasicInformationSuccess(getHeaderSuccessEvent: GetHeaderSuccessEvent)
-        fun onGetResumeBasicInformationFailure(getHeaderFailureEvent: GetHeaderFailureEvent)
+        fun onGetResumeHeaderSuccess(getHeaderSuccessEvent: GetHeaderSuccessEvent)
+        fun onGetResumeHeaderFailure(getHeaderFailureEvent: GetHeaderFailureEvent)
+    }
+
+    interface DataManager{
+        fun getResumeHeader()
     }
 }

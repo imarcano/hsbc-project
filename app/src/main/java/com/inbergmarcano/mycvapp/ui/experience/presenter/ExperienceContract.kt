@@ -14,9 +14,13 @@ class ExperienceContract {
         fun loadDataSuccess(experiences: ArrayList<Experience>)
     }
 
-    interface Presenter: BaseContract.Presenter<View, ExperienceDataManager> {
+    interface Presenter: BaseContract.Presenter<View, DataManager> {
         fun loadData()
         fun onGetExperienceSuccess(getExperienceSuccessEvent: GetExperienceSuccessEvent)
         fun onGetExperienceFailure(getExperienceFailureEvent: GetExperienceFailureEvent)
+    }
+
+    interface DataManager {
+        fun getResumeExperience()
     }
 }

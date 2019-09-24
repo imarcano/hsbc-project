@@ -1,8 +1,7 @@
 package com.inbergmarcano.mycvapp.ui.basicinformation.presenter
 
-import com.inbergmarcano.mycvapp.rest.events.GetBasicInformationsFailureEvent
-import com.inbergmarcano.mycvapp.rest.events.GetBasicInformationsSuccessEvent
-import com.inbergmarcano.mycvapp.ui.basicinformation.model.BasicInformationDataManager
+import com.inbergmarcano.mycvapp.rest.events.GetBasicInformationFailureEvent
+import com.inbergmarcano.mycvapp.rest.events.GetBasicInformationSuccessEvent
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import javax.inject.Inject
@@ -11,10 +10,10 @@ class BasicInformationPresenter:
     BasicInformationContract.Presenter {
 
     private lateinit var mView: BasicInformationContract.View
-    private lateinit var mDataManager: BasicInformationDataManager
+    private lateinit var mDataManager: BasicInformationContract.DataManager
 
 
-    @Inject override fun subscribe(view: BasicInformationContract.View, dataManager: BasicInformationDataManager) {
+    @Inject override fun subscribe(view: BasicInformationContract.View, dataManager: BasicInformationContract.DataManager) {
         EventBus.getDefault().register(this)
         mView = view
         mDataManager = dataManager
@@ -30,13 +29,13 @@ class BasicInformationPresenter:
 
 
     @Subscribe
-    override fun onGetResumeBasicInformationSuccess(getBasicInformationsSuccessEvent: GetBasicInformationsSuccessEvent) {
-        mView.loadDataSuccess(getBasicInformationsSuccessEvent.basicInformations)
+    override fun onGetResumeBasicInformationSuccess(getBasicInformationSuccessEvent: GetBasicInformationSuccessEvent) {
+        mView.loadDataSuccess(getBasicInformationSuccessEvent.basicInformations)
 
     }
 
     @Subscribe
-    override fun onGetResumeBasicInformationFailure(getBasicInformationsFailureEvent: GetBasicInformationsFailureEvent) {
-        mView.showErrorMessage(getBasicInformationsFailureEvent.message)
+    override fun onGetResumeBasicInformationFailure(getBasicInformationFailureEvent: GetBasicInformationFailureEvent) {
+        mView.showErrorMessage(getBasicInformationFailureEvent.message)
     }
 }

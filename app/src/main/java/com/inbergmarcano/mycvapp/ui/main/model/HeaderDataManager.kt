@@ -4,15 +4,16 @@ import androidx.annotation.NonNull
 import com.inbergmarcano.mycvapp.rest.ResumeEndpoints
 import com.inbergmarcano.mycvapp.rest.events.GetHeaderFailureEvent
 import com.inbergmarcano.mycvapp.rest.events.GetHeaderSuccessEvent
+import com.inbergmarcano.mycvapp.ui.main.presenter.MainContract
 import org.greenrobot.eventbus.EventBus
 import retrofit2.Call
 import retrofit2.Callback
 import javax.inject.Singleton
 
 @Singleton
-class HeaderDataManager (private val resumeEndpoints: ResumeEndpoints) {
+class HeaderDataManager (private val resumeEndpoints: ResumeEndpoints): MainContract.DataManager {
 
-        fun getResumeHeader() {
+        override fun getResumeHeader() {
             val callback = object : Callback<Header> {
                 override fun onResponse(@NonNull call: Call<Header>, @NonNull response: retrofit2.Response<Header>) {
                     if (response.isSuccessful) {

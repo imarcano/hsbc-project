@@ -65,8 +65,8 @@ class ExperienceFragment: BaseFragment(),
             context!!,
             experiences
         )
-        recyclerView!!.setLayoutManager(LinearLayoutManager(activity))
-        recyclerView!!.setAdapter(adapter)
+        recyclerView!!.layoutManager = LinearLayoutManager(activity)
+        recyclerView!!.adapter = adapter
     }
 
 }

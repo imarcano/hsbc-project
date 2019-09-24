@@ -2,20 +2,18 @@ package com.inbergmarcano.mycvapp.ui.profile.model
 
 import androidx.annotation.NonNull
 import com.inbergmarcano.mycvapp.rest.ResumeEndpoints
-import com.inbergmarcano.mycvapp.rest.events.GetBasicInformationsFailureEvent
-import com.inbergmarcano.mycvapp.rest.events.GetBasicInformationsSuccessEvent
 import com.inbergmarcano.mycvapp.rest.events.GetProfileFailureEvent
 import com.inbergmarcano.mycvapp.rest.events.GetProfileSuccessEvent
-import com.inbergmarcano.mycvapp.rest.models.BasicInformations
+import com.inbergmarcano.mycvapp.ui.profile.presenter.ProfileContract
 import org.greenrobot.eventbus.EventBus
 import retrofit2.Call
 import retrofit2.Callback
 import javax.inject.Singleton
 
 @Singleton
-class ProfileDataManager (private val resumeEndpoints: ResumeEndpoints) {
+class ProfileDataManager (private val resumeEndpoints: ResumeEndpoints): ProfileContract.DataManager {
 
-        fun getResumeProfile() {
+        override fun getResumeProfile() {
             val callback = object : Callback<Profile> {
                 override fun onResponse(@NonNull call: Call<Profile>, @NonNull response: retrofit2.Response<Profile>) {
                     if (response.isSuccessful) {

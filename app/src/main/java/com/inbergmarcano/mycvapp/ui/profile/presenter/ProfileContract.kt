@@ -14,9 +14,13 @@ class ProfileContract {
         fun loadDataSuccess(profile: Profile)
     }
 
-    interface Presenter: BaseContract.Presenter<View, ProfileDataManager> {
+    interface Presenter: BaseContract.Presenter<View, DataManager> {
         fun loadData()
         fun onGetResumeBasicInformationSuccess(getProfileSuccessEvent: GetProfileSuccessEvent)
         fun onGetResumeBasicInformationFailure(getProfileFailureEvent: GetProfileFailureEvent)
+    }
+
+    interface DataManager {
+        fun getResumeProfile()
     }
 }
